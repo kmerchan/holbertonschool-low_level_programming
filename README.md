@@ -1,0 +1,1 @@
+This repository focuses on low-level programming with C.
