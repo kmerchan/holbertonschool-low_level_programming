@@ -1,1 +1,2 @@
 #!/bin/bash
+gcc -c -o $(printf $(echo $CFILE | rev | cut -c 2- | rev)o) $CFILE
