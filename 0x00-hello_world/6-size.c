@@ -1,5 +1,5 @@
 #include<stdio.h>
-#define S "Size of"
+#define S "Size of a"
 
 /**
  * main - Entry point
@@ -10,7 +10,7 @@
 int main(void)
 {
 	printf("%s char: %d byte(s)\n", S, sizeof(char));
-	printf("%s int: %d byte(s)\n", S, sizeof(int));
+	printf("%sn int: %d byte(s)\n", S, sizeof(int));
 	printf("%s long int: %d byte(s)\n", S, sizeof(long int));
 	printf("%s long long int: %d byte(s)\n", S, sizeof(long long int));
 	printf("%s float: %d byte(s)\n", S, sizeof(float));
