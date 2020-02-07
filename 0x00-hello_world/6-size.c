@@ -1,4 +1,5 @@
 #include<stdio.h>
+#define S "Size of"
 
 /**
  * main - Entry point
@@ -8,6 +9,10 @@
 
 int main(void)
 {
-	printf("with proper grammar, but the outcome is a piece of art,\n");
+	printf("%s char: %d byte(s)\n", S, sizeof(char));
+	printf("%s int: %d byte(s)\n", S, sizeof(int));
+	printf("%s long int: %d byte(s)\n", S, sizeof(long int));
+	printf("%s long long int: %d byte(s)\n", S, sizeof(long long int));
+	printf("%s float: %d byte(s)\n", S, sizeof(float));
 	return (0);
 }
