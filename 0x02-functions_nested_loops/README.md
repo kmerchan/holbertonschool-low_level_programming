@@ -1,0 +1,1 @@
+This directory focuses on projects related to C functions and use of nested loops.
