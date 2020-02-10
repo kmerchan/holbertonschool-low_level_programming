@@ -1,27 +1,24 @@
-#include <stdio.h>
+#include "holberton.h"
 
 /**
  * main - Entry point
- *
+ * function will print Holberton
  * Return: Always 0 (Success)
  */
 
 int main(void)
 {
-	int n;
+	/* Create array of characters to spell Holberton */
+	char array[10] = "Holberton";
+	int index;
 
-	n = 48;
-	while (n <= 57)
+	/* Loop through array to print full string */
+	while (index < 10)
 	{
-		putchar(n);
-		n++;
+		_putchar(array[index]);
+		index++;
 	}
-	n = 97;
-	while (n <= 102)
-	{
-		putchar(n);
-		n++;
-	}
-	putchar('\n');
+	/* Print new line character after Holberton */
+	_putchar(10);
 	return (0);
 }
