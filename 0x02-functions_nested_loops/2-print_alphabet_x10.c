@@ -6,7 +6,7 @@
  * Return: Always 0 (Success)
  */
 
-int print_alphabet_x10(void)
+void print_alphabet_x10(void)
 {
 	int n;
 	int t;
@@ -25,5 +25,4 @@ int print_alphabet_x10(void)
 		/* Print new line after alphabet */
 		_putchar(10);
 	}
-	return (0);
 }
