@@ -2,9 +2,9 @@
 
 /**
  * print_sign - print sign of character
- * @n: integrer to check
+ * @n: integer to check sign of
  *
- * Return: 1, if positive; -1, if negative; 0, if 0
+ * Return: 1 if positive, -1 if negative, 0 if 0
  */
 
 int print_sign(int n)
