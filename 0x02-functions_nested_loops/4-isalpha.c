@@ -1,9 +1,10 @@
 #include <ctype.h>
 
 /**
- * main - Entry point
- * function will check for alpha character
- * Return: Always 0 (Success)
+ * _isalpha - check for alpha character
+ * @c: character to check
+ *
+ * Return: 1 if alpha; 0 otherwise
  */
 
 int _isalpha(int c)
