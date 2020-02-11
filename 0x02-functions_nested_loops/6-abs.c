@@ -1,28 +1,18 @@
 #include <stdlib.h>
 
 /**
- * main - Entry point
- * function will print sign of character
- * Return: Always 0 (Success)
+ * _abs - detemine the absolute value of a character
+ * @n: input integer
+ *
+ * Return: value of absolute value
  */
 
-int _abs(int)
+int _abs(int n)
 {
-	int n;
-
-	if (n > 0)
+	if (n < 0)
 	{
-		/* if n is positive, print n */
-		return ('n');
+		/* if n is negative, subtract n from 0 to get positive value */
+		n = 0 - n;
 	}
-	else if (n < 0)
-	{
-		/* if n is negative, remove - */
-		return ('n');
-	}
-	else
-	{
-		/* if n is zero, print 0 */
-		return (0);
-	}
+	return (n);
 }
