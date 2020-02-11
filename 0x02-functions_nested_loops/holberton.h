@@ -16,5 +16,8 @@ int _isalpha(int c);
 /* declaration for function to print sign of int n */
 int print_sign(int n);
 
-/* declaration for function to print absolute value of int */
+/* declaration for function to return absolute value of int */
 int _abs(int);
+
+/* declaration for function to return value of last digit */
+int print_last_digit(int);
