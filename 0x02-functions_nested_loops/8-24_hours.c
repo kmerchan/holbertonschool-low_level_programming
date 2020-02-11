@@ -13,17 +13,28 @@ void jack_bauer(void)
 	{
 		for (b = 0; b <= 99; b++)
 		{
-			if ((a / 10) <= 2 && (a % 10) <= 3)
+			if ((a / 10) >= 3)
 			{
-				if ((b / 10) <= 5 && (b % 10) <= 9)
+				;
+			}
+			else
+			{
+				if ((a / 10) == 2 && (a % 10) >= 4)
 				{
-					_putchar((a / 10) + '0');
-					_putchar((a % 10) + '0');
+					;
+				}
+				else
+				{
+					if ((b / 10) <= 5 && (b % 10) <= 9)
+					{
+						_putchar((a / 10) + '0');
+						_putchar((a % 10) + '0');
 /* ':' is 58 */
-					_putchar(58);
-					_putchar((b / 10) + '0');
-					_putchar((b % 10) + '0');
-					_putchar(10);
+						_putchar(58);
+						_putchar((b / 10) + '0');
+						_putchar((b % 10) + '0');
+						_putchar(10);
+					}
 				}
 			}
 		}
