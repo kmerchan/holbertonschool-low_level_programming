@@ -12,3 +12,6 @@ int _islower(int c);
 
 /* declaration for function to check if alpha character */
 int _isalpha(int c);
+
+/* declaration for function to print sign of int n */
+int print_sign(int n);
