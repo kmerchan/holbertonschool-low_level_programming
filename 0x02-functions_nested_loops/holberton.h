@@ -33,3 +33,6 @@ int add(int, int);
 
 /* declaration for function to print from number to 98 (11)*/
 void print_to_98(int n);
+
+/* declaration for function to print times table nxn (12)*/
+void print_times_table(int n);
