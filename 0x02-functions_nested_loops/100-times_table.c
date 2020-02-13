@@ -27,27 +27,22 @@ void print_times_table(int n)
 				}
 				else if ((x / 100) == 0)
 				{
-					if ((x / 10) == 0)
-					{
-						_putchar(32);
-						_putchar(32);
-						_putchar((x % 10) + '0');
-					}
-					else
-					{
-						_putchar(32);
-						_putchar((x / 10) + '0');
-						_putchar((x % 10) + '0');
-					}
+					_putchar(32);
+					_putchar((x / 10) + '0');
+					_putchar((x % 10) + '0');
 				}
 				else
 				{
 					_putchar((x / 100) + '0');
-					_putchar((x / 10) + '0');
+					_putchar(((x / 10) % 10) + '0');
 					_putchar((x % 10) + '0');
 				}
 			}
 			_putchar(10);
 		}
+	}
+	else
+	{
+		_putchar(10);
 	}
 }
