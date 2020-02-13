@@ -9,3 +9,6 @@ int _isdigit(int c);
 
 /* declaration for function to return product of two integers (2)*/
 int mul(int a, int b);
+
+/* declaration for function to print 0-9 followed by new line (3)*/
+void print_numbers(void);
