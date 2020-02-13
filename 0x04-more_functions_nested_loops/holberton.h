@@ -6,3 +6,6 @@ int _isupper(int c);
 
 /* declaration for function to return if character is a digit (0-9) (1)*/
 int _isdigit(int c);
+
+/* declaration for function to return product of two integers (2)*/
+int mul(int a, int b);
