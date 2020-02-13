@@ -21,3 +21,6 @@ void more_numbers(void);
 
 /* declaration for function to print line of length n (6)*/
 void print_line(int n);
+
+/* declaration for function to print diagonal line of length n (7)*/
+void print_diagonal(int n);
