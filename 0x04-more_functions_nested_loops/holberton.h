@@ -24,3 +24,6 @@ void print_line(int n);
 
 /* declaration for function to print diagonal line of length n (7)*/
 void print_diagonal(int n);
+
+/* declaration for function to print square of dimension size x size (8)*/
+void print_square(int size);
