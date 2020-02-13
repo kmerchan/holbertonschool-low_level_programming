@@ -41,8 +41,4 @@ void print_times_table(int n)
 			_putchar(10);
 		}
 	}
-	else
-	{
-		_putchar(10);
-	}
 }
