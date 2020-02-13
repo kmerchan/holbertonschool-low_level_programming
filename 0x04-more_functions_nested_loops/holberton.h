@@ -18,3 +18,6 @@ void print_most_numbers(void);
 
 /* declaration for funciton to print 0-14 ten times (5)*/
 void more_numbers(void);
+
+/* declaration for function to print line of length n (6)*/
+void print_line(int n);
