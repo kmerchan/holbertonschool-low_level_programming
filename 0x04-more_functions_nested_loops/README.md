@@ -1,0 +1,1 @@
+This directory contains more practice writing C funtions and utilizing nested loops
