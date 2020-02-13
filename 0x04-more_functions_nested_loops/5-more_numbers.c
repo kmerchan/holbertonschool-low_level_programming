@@ -1,19 +1,24 @@
 #include "holberton.h"
 
 /**
- * print_most_numbers - prints numbers 0-9, except 2 and 4, followed by newline
+ * more_numbers - prints numbers 0-14 10 times
  */
 
-void print_most_numbers(void)
+void more_numbers(void)
 {
+	int n;
 	int x;
 
-	for (x = 0; x <= 9; x++)
+	for (n = 0; n <= 10; n++)
 	{
-		if (x != 2 && x != 4)
+		for (x = 0; x <= 14; x++)
 		{
-			_putchar(x + '0');
+			if ((x / 10) != 0)
+			{
+				_putchar((x / 10) + '0');
+			}
+			_putchar((x % 10) + '0');
 		}
+		_putchar(10);
 	}
-	_putchar(10);
 }

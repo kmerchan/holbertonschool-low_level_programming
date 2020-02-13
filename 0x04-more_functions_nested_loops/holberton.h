@@ -15,3 +15,6 @@ void print_numbers(void);
 
 /* declaration for function to print 0-9, except 2 and 4 (4)*/
 void print_most_numbers(void);
+
+/* declaration for funciton to print 0-14 ten times (5)*/
+void more_numbers(void);
