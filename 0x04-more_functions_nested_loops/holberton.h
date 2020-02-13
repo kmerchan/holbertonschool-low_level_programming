@@ -14,4 +14,4 @@ int mul(int a, int b);
 void print_numbers(void);
 
 /* declaration for function to print 0-9, except 2 and 4 (4)*/
-void print_more_numbers(void);
+void print_most_numbers(void);

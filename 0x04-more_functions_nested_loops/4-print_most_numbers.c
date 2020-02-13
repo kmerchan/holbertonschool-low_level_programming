@@ -4,7 +4,7 @@
  * print_most_numbers - prints numbers 0-9, except 2 and 4, followed by newline
  */
 
-void print_numbers(void)
+void print_most_numbers(void)
 {
 	int x;
 
