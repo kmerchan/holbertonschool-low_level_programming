@@ -8,13 +8,28 @@
 
 int main(void)
 {
-	/* c = 65 is 'A' and c = 90 is 'Z' */
-	if (c >= 65 && c <= 90)
+	int x;
+
+	printf("%d", 1);
+	for (x = 2; x <= 100; x++)
 	{
-		return (1);
+		if ((x % 3) == 0 && (x % 5) == 0)
+		{
+			printf(" FizzBuzz");
+		}
+		else if ((x % 3) == 0)
+		{
+			printf(" Fizz");
+		}
+		else if ((x % 5) == 0)
+		{
+			printf(" Buzz");
+		}
+		else
+		{
+			printf(" %d", x);
+		}
 	}
-	else
-	{
-		return (0);
-	}
+	printf("\n");
+	return (0);
 }
