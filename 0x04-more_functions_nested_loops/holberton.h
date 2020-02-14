@@ -27,3 +27,6 @@ void print_diagonal(int n);
 
 /* declaration for function to print square of dimension size x size (8)*/
 void print_square(int size);
+
+/* declaration for function to print left-justified triangle (10)*/
+void print_triangle(int size);
