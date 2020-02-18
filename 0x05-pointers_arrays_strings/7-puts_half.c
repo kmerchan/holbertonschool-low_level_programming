@@ -17,9 +17,19 @@ void puts_half(char *str)
 	{
 		size++;
 	}
-	for (value = size / 2; value < size; value++)
+	if (size % 2 == 0)
 	{
-		_putchar(str[value]);
+		for (value = size / 2; value < size; value++)
+		{
+			_putchar(str[value]);
+		}
+	}
+	else
+	{
+		for (value = (size / 2) + 1; value < size; value++)
+		{
+			_putchar(str[value]);
+		}
 	}
 	/* 10 is ASCII value for \n */
 	_putchar(10);
