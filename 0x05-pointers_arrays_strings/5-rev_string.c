@@ -1,5 +1,3 @@
-#include <string.h>
-
 /**
  * rev_string - function to reverse string
  * @s: input string
