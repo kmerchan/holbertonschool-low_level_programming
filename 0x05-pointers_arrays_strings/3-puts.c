@@ -12,8 +12,12 @@ void _puts(char *str)
 {
 	int size, value;
 
-	size = sizeof(str);
-	for (value = 1; value <= size; value++)
+	size = 0;
+	for (value = 0; str[value] != 0; value++)
+	{
+		size++;
+	}
+	for (value = 0; value < size; value++)
 	{
 		_putchar(str[value]);
 	}
