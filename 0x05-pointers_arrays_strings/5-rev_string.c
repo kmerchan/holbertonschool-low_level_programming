@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include <string.h>
 
 /**
@@ -10,16 +11,21 @@
 
 void rev_string(char *s)
 {
-	int size, i;
+	int i, size = 0;
 
-	size = 0;
 	for (i = 0; s[i] != 0; i++)
 	{
 		size++;
 	}
+	int start;
+	int end = size - 1;
+	char holder;
 
-	for (i = 0; i < size; i++)
+	for (start = 0; start < (size / 2); start++)
 	{
-		s[i] = s[size - i];
+		holder = s[start];
+		s[start] = s[end];
+		s[end] = holder;
+		end--;
 	}
 }
