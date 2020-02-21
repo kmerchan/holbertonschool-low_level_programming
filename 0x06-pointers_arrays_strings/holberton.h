@@ -27,3 +27,6 @@ char *leet(char *);
 
 /* declaration of function that encodes a string in rot13 (8)*/
 char *rot13(char *);
+
+/* declaration of function to print integer (9)*/
+void print_number(int n);
