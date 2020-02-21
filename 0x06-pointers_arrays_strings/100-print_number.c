@@ -8,9 +8,11 @@
 
 void print_number(int n)
 {
-	int i, num, e, divider, counter = 0;
-
-	num = n;
+	int i = 0;
+	int num = n;
+	int e = 0;
+	int divider = 0;
+	int counter = 0;
 
 	while (num / 10 != 0)
 	{
