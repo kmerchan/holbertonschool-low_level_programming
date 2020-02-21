@@ -30,3 +30,6 @@ char *rot13(char *);
 
 /* declaration of function to print integer (9)*/
 void print_number(int n);
+
+/* declaration of function to add two numbers (11)*/
+char *infinite_add(char *n1, char *n2, char *r, int size_r);
