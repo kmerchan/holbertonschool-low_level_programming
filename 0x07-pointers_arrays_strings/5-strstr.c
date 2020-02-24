@@ -1,3 +1,5 @@
+#include <stdio.h>
+
 /**
  * _strstr - finds matching set of bytes of one substring in another string
  * @haystack: input pointer to string of characters to check
@@ -23,22 +25,20 @@ char *_strstr(char *haystack, char *needle)
 	{
 		if (haystack[i] == needle[0])
 		{
+			printf("You have a match at %d\n", i);
 			x = 0;
 			while (x < size && haystack[i + x] == needle[x])
 			{
 				if (x == (size - 1))
 				{
+					printf("You have a full match\n");
 					return (&haystack[i]);
 				}
 				x++;
 			}
-			if (haystack[i + x] == '\0' && needle[x] == '\0')
-			{
-				return (&haystack[i]);
-			}
 		}
 	}
-	if (haystack[i] == '\0' && needle[0] == '\0')
+	if (haystack[i] == '\0' && needle[x] == '\0')
 	{
 		return (&haystack[i]);
 	}
