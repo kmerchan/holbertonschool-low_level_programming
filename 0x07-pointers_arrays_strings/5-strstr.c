@@ -1,47 +1,48 @@
- #include "holberton.h"
 /**
- * _strstr - find a string within a string
+ * _strstr - finds matching set of bytes of one substring in another string
+ * @haystack: input pointer to string of characters to check
  *
- * @haystack: the string we are looking into to see if there is a match
- * to out smaller string, needle.
+ * @needle: input pointer to substring of characters to look for
  *
- * @needle: out key string that we are comparing against haystack
- *
- * Return: return the location of where the match to need starts
+ * Return: pointer to location of substring or null if substring not found
  */
+
 char *_strstr(char *haystack, char *needle)
 {
 	int i = 0;
 	int j = 0;
-	char *point = 0;
+	int size = 0;
+	int x = 0;
 
-	if (needle[0] == '\0')
+	for (j = 0; needle[j] != '\0'; j++)
 	{
-		return (&haystack[0]);
+		size++;
 	}
-	while (haystack[i] != '\0')
+	if (size == 0)
 	{
-		if (haystack[i] == needle[j])
+		return (haystack);
+	}
+	for (i = 0; haystack[i] != '\0'; i++)
+	{
+		if (haystack[i] == needle[0])
 		{
-			point = &haystack[i];
-			for (j = 1; needle[j] != '\0'; j++)
+			x = 0;
+			while (x < size && haystack[i + x] == needle[x])
 			{
-				i += 1;
-				if (needle[j] == haystack[i])
+				if (x == (size - 1))
 				{
-					if (needle[j + 1] == '\0')
-						return (point);
+					return (&haystack[i]);
 				}
-				else
-				{
-					j = 0;
-					break;
-				}
+				x++;
 			}
 		}
-		else
-			i++;
 	}
-	point = 0;
-	return (point);
+	if (haystack[i] == '\0' && needle[x] == '\0')
+	{
+		return (&haystack[i]);
+	}
+	else
+	{
+		return ('\0');
+	}
 }
