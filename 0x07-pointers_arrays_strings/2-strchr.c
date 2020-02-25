@@ -1,3 +1,5 @@
+#define NULL 0
+
 /**
  * _strchr - finds character in a string and returns address of that character
  * @s: input pointer to string of characters
@@ -9,25 +11,16 @@
 
 char *_strchr(char *s, char c)
 {
-	int i = 0;
-
-	while (s[i] != c && s[i] != '\0')
+	for (;; s++)
 	{
-		i++;
-	}
-	if (s[i] == '\0')
-	{
-		if (c == '\0')
+		if (*s == c)
 		{
-			return (&s[i]);
+			return (s);
 		}
-		else
-		{
-			return ('\0');
-		}
+		else if (*s == c && c == NULL)
+			return(s);
+		else if (*s == NULL)
+			break;
 	}
-	else
-	{
-		return (&s[i]);
-	}
+	return (NULL);
 }
