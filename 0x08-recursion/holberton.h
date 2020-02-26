@@ -22,5 +22,8 @@ int _sqrt_recursion(int n);
 /* declaration of function to determine if a number is prime (6)*/
 int is_prime_number(int n);
 
+/* declaration of subfunction to determine count of recursion (6)*/
+int counter(int n, int count);
+
 /* declaration of function to determine if a string is a palindrome (7)*/
 int is_palindrome(char *s);
