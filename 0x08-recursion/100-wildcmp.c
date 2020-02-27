@@ -27,7 +27,7 @@ int wildcmp(char *s1, char *s2)
 
 int stringcmp(char *s1, char *s2, int checker)
 {
-	int count = checker * 0;
+	int moves;
 
 	if (s2[0] == '*')
 	{
@@ -40,14 +40,14 @@ int stringcmp(char *s1, char *s2, int checker)
 	{
 		if (checker > 0)
 		{
-			count = checkwd(s2, 0);
-			s1 -= count;
+			moves = checkwd(s2, 0);
+			s1 -= moves;
 			s1 += 2;
 			if (s1[0] == '\0' || s1[-1] == '\0')
 			{
 				return (0);
 			}
-			s2 -= count;
+			s2 -= moves;
 			return (stringcmp(s1, s2, checker));
 		}
 		else
