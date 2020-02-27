@@ -27,7 +27,7 @@ int wildcmp(char *s1, char *s2)
 
 int stringcmp(char *s1, char *s2, int checker)
 {
-	int count;
+	int count = checker * 0;
 
 	if (s2[0] == '*')
 	{
