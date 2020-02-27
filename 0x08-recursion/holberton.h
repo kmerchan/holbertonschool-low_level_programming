@@ -30,3 +30,9 @@ int counter(int n, int count);
 
 /* declaration of function to determine if a string is a palindrome (7)*/
 int is_palindrome(char *s);
+
+/* declaration of subfunction to determine string length (7)*/
+int stringlength(char *s, int count);
+
+/* declaration of subfunction to determine if characters match (7)*/
+int matching(char *s, int end);
