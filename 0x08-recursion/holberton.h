@@ -50,4 +50,4 @@ char *wilds2(char *s2);
 char *wilds1(char *s1, char next);
 
 /* declaration of subfunction to check for previous wildcards and move strings*/
-int checkwd(char *s1, char *s2, int count);
+int checkwd(char *s2, int count);
