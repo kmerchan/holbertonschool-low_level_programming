@@ -36,3 +36,12 @@ int stringlength(char *s, int count);
 
 /* declaration of subfunction to determine if characters match (7)*/
 int matching(char *s, int end);
+
+/* declaration of function to compare two strings, accounting for wildcards(8)*/
+int wildcmp(char *s1, char *s2);
+
+/* declaration of subfunction to move s2 past wildcards (8)*/
+char *wilds2(char *s2);
+
+/* declaration of subfunction to move s1 to next character of s2 after * (8)*/
+char *wilds1(char *s1, char next);
