@@ -24,12 +24,7 @@ int main(int argc, char *argv[])
 	}
 	else
 	{
-		printf("This is argc: %d\n", argc);
-		printf("This is argv[1]: %s\n", argv[1]);
-		printf("This is argv[2]: %s\n", argv[2]);
-		printf("This is int of argv[1]: %d\n", atoi(argv[1]));
-		printf("This is int of argv[2]: %d\n", atoi(argv[2]));
-		for (i = 1; i <= argc; i++)
+		for (i = 1; i <= (argc - 1); i++)
 		{
 			if (atoi(argv[i]) == 0)
 			{
@@ -40,7 +35,6 @@ int main(int argc, char *argv[])
 			{
 				x = atoi(argv[i]);
 				sum += x;
-				printf("This is sum: %d\n", sum);
 			}
 		}
 	}
