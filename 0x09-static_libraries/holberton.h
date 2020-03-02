@@ -1,5 +1,5 @@
-#ifndef "holberton.h"_H
-#define "holberton.h"_H
+#ifndef HEADERFILE_H
+#define HEADERFILE.H
 int _putchar(char c);
 int _islower(int c);
 int _isalpha(int c);
