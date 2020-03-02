@@ -1,6 +1,7 @@
 #include "holberton.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <ctype.h>
 
 /**
 * main - function to add positive numbers together
@@ -13,7 +14,7 @@
 
 int main(int argc, char *argv[])
 {
-	int i, sum, x;
+	int i, j, sum;
 
 	sum = 0;
 
@@ -26,19 +27,20 @@ int main(int argc, char *argv[])
 	{
 		for (i = 1; i <= (argc - 1); i++)
 		{
-			if (atoi(argv[i]) == 0)
+			for (j = 0; argv[i][j]; j++)
 			{
-				printf("Error\n");
-				return (1);
+				if (isdigit(argv[i][j]) == 0)
+				{
+					printf("Error\n");
+					return (1);
+				}
 			}
-			else
+			if (atoi(argv[i]) >= 0)
 			{
-				x = atoi(argv[i]);
-				sum += x;
+				sum += atoi(argv[i]);
 			}
 		}
 	}
 	printf("%d\n", sum);
 	return (0);
-
 }
