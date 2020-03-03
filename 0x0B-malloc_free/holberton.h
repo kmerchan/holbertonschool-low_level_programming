@@ -10,4 +10,7 @@ char *_strdup(char *str);
 /*decalration of function for new pointer to concatenated copy of strings (2)*/
 char *str_concat(char *s1, char *s2);
 
+/* declaration of function to create and initialize 2-D array (3)*/
+int **alloc_grid(int width, int height);
+
 #endif
