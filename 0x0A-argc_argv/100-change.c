@@ -23,17 +23,17 @@ int main(int argc, char *argv[])
 	}
 	change = atoi(argv[1]);
 
-	if (change < 0)
+	if (change <= 0)
 	{
 		printf("%d\n", 0);
 	}
 	else
 	{
-		coins += divide_change(change, 25);
-		coins += divide_change(change, 10);
-		coins += divide_change(change, 5);
-		coins += divide_change(change, 2);
-		coins += divide_change(change, 1);
+		coins += divide_change(&change, 25);
+		coins += divide_change(&change, 10);
+		coins += divide_change(&change, 5);
+		coins += divide_change(&change, 2);
+		coins += divide_change(&change, 1);
 		printf("%d\n", coins);
 	}
 	return (0);
@@ -48,14 +48,14 @@ int main(int argc, char *argv[])
 * Return: coins needed to make change with that cent
 */
 
-int divide_change(int change, int cent)
+int divide_change(int *change, int cent)
 {
 	int coins = 0;
 
-	while (change % cent == 0)
+	while (*change >= cent)
 	{
 		coins++;
-		change -= cent;
+		*change -= cent;
 	}
 	return (coins);
 }
