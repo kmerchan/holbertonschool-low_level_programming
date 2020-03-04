@@ -13,7 +13,7 @@
 int **alloc_grid(int width, int height)
 {
 	int **array;
-	int rows, columns, x;
+	int rows, columns;
 
 	if (width <= 0 || height <= 0)
 		return (NULL);
@@ -37,8 +37,7 @@ int **alloc_grid(int width, int height)
 		for (columns = 0; columns < width; columns++)
 		{
 			printf("We are on column %d\n", columns);
-			x = (width * rows) + columns;
-			*(array + x) = 0;
+			array[rows][columns] = 0;
 		}
 	}
 	return (array);
