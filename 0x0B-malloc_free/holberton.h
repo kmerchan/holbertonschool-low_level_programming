@@ -16,4 +16,7 @@ int **alloc_grid(int width, int height);
 /* declaration of function to free memory allocated to 2-D array by malloc (4)*/
 void free_grid(int **grid, int height);
 
+/* declaration of function to concatenate all arguments to program (5)*/
+char *argstostr(int ac, char **av);
+
 #endif
