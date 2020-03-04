@@ -24,7 +24,6 @@ char *str_concat(char *s1, char *s2)
 	else if (s1 == '\0')
 	{
 		i = _strlen(s2);
-		i++;
 	}
 	else if (s2 == '\0')
 	{
@@ -41,13 +40,8 @@ char *str_concat(char *s1, char *s2)
 		return (0);
 	array[i + 1] = '\0';
 	i = 0;
-	if (s1 == '\0')
-		array[i++] = '\0';
-	else
-	{
-		for (i = 0; s1[i]; i++)
-			array[i] = s1[i];
-	}
+	for (i = 0; s1[i]; i++)
+		array[i] = s1[i];
 	for (j = 0; s2[j]; i++, j++)
 		array[i] = s2[j];
 	return (array);
