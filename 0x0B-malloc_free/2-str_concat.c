@@ -15,6 +15,7 @@ char *str_concat(char *s1, char *s2)
 {
 	char *array;
 	int i, j;
+
 	i = 0;
 
 	printf("You made it to the function!\n");
@@ -25,7 +26,7 @@ char *str_concat(char *s1, char *s2)
 		i += _strlen(s2);
 	}
 	else if (s1 == NULL && s2 == NULL)
-		i = 0;
+		return (0);
 	else if (s1 == NULL)
 	{
 		printf("Only string 1 is null!\n");
