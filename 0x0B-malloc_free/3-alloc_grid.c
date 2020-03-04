@@ -12,28 +12,31 @@
 
 int **alloc_grid(int width, int height)
 {
-	char **array;
+	int **array;
 	int rows, columns, x;
 
 	if (width <= 0 || height <= 0)
-		return (0);
-	array = malloc(height * sizeof(int));
+		return (NULL);
+	array = (int **) malloc(height * sizeof(int *));
 	if (array == '\0')
 	{
-		return (0);
+		return (NULL);
 	}
 	for (rows = 0; rows < height; rows++)
 	{
-		array[rows] = malloc(width * sizeof(int));
+		printf("We are on row %d\n", rows);
+		array[rows] = (int *) malloc(width * sizeof(int));
 		if (array[rows] == '\0')
-		{
-			return (0);
-		}
+			{
+				return (NULL);
+			}
 	}
 	for (rows = 0; rows < height; rows++)
 	{
+		printf("We are on row %d\n", rows);
 		for (columns = 0; columns < width; columns++)
 		{
+			printf("We are on column %d\n", columns);
 			x = (width * rows) + columns;
 			*(array + x) = 0;
 		}
