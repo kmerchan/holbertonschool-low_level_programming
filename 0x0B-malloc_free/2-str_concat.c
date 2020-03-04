@@ -24,7 +24,11 @@ char *str_concat(char *s1, char *s2)
 		i += _strlen(s2);
 	}
 	if (s1 == NULL && s2 == NULL)
+	{
+		s1 = "";
+		s2 = "";
 		i = 0;
+	}
 	else if (s1 == NULL)
 	{
 		s1 = "";
