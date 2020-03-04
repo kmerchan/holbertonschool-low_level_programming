@@ -27,9 +27,9 @@ int **alloc_grid(int width, int height)
 		printf("We are on row %d\n", rows);
 		array[rows] = (int *) malloc(width * sizeof(int));
 		if (array[rows] == '\0')
-			{
-				return (NULL);
-			}
+		{
+       			return (NULL);
+	       	}
 	}
 	for (rows = 0; rows < height; rows++)
 	{
