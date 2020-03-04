@@ -18,10 +18,8 @@ char *str_concat(char *s1, char *s2)
 
 	i = 0;
 
-	printf("You made it to the function!\n");
 	if (s1 != NULL && s2 != NULL)
 	{
-		printf("You have both not null strings!\n");
 		i = _strlen(s1);
 		i += _strlen(s2);
 	}
@@ -29,19 +27,14 @@ char *str_concat(char *s1, char *s2)
 		return (0);
 	else if (s1 == NULL)
 	{
-		printf("Only string 1 is null!\n");
 		s1 = "";
 		i = _strlen(s2);
-		printf("This is i for string length 2: %d\n", i);
 	}
 	else if (s2 == NULL)
 	{
-		printf("Only s2 is null!\n");
 		s2 = "";
 		i = _strlen(s1);
-		printf("This is i for string length 1: %d\n", i);
 	}
-	printf("This is i after all string length conditions: %d\n", i);
 	array = (char *) malloc(sizeof(char) * (i + 1));
 	if (array == NULL)
 		return (0);
