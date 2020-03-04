@@ -10,6 +10,9 @@ char *_strdup(char *str);
 /*decalration of function for new pointer to concatenated copy of strings (2)*/
 char *str_concat(char *s1, char *s2);
 
+/* declaration of subfunction to find length of string */
+int _strlen(char *s);
+
 /* declaration of function to create and initialize 2-D array (3)*/
 int **alloc_grid(int width, int height);
 
@@ -18,5 +21,8 @@ void free_grid(int **grid, int height);
 
 /* declaration of function to concatenate all arguments to program (5)*/
 char *argstostr(int ac, char **av);
+
+/*declaration of function to split string into individual words (6)*/
+char **strtow(char *str);
 
 #endif
