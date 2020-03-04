@@ -1,3 +1,4 @@
+#include "holberton.h"
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -17,24 +18,17 @@ char *str_concat(char *s1, char *s2)
 
 	if (s1 != '\0' && s2 != '\0')
 	{
-		for (i = 0; s1[i]; i++)
-			continue;
-		for (j = 0; s2[j]; j++, i++)
-			continue;
+		i = _strlen(s1);
+		i += _strlen(s2);
 	}
 	else if (s1 == '\0')
 	{
-		s1 = (char *) malloc(1);
-		s1[0] = '\0';
-		for (i = 0; s2[i]; i++)
-			continue;
+		i = _strlen(s2);
+		i++;
 	}
 	else if (s2 == '\0')
 	{
-		s2 = (char *) malloc(1);
-		s2[0] = '\0';
-		for (i = 0; s1[i]; i++)
-			continue;
+		i = _strlen(s1);
 	}
 	else
 	{
@@ -47,9 +41,23 @@ char *str_concat(char *s1, char *s2)
 		return (0);
 	array[i + 1] = '\0';
 	i = 0;
-	for (i = 0; s1[i]; i++)
-		array[i] = s1[i];
+	if (s1 == '\0')
+		array[i++] = '\0';
+	else
+	{
+		for (i = 0; s1[i]; i++)
+			array[i] = s1[i];
+	}
 	for (j = 0; s2[j]; i++, j++)
 		array[i] = s2[j];
 	return (array);
+}
+
+int _strlen(char *s)
+{
+	int i = 0;
+
+	for (i = 0; s[i]; i++)
+		continue;
+	return(i);
 }
