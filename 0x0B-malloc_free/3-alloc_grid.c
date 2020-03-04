@@ -24,7 +24,6 @@ int **alloc_grid(int width, int height)
 	}
 	for (rows = 0; rows < height; rows++)
 	{
-		printf("We are on row %d\n", rows);
 		array[rows] = (int *) malloc(width * sizeof(int));
 		if (array[rows] == '\0')
 		{
@@ -33,10 +32,8 @@ int **alloc_grid(int width, int height)
 	}
 	for (rows = 0; rows < height; rows++)
 	{
-		printf("We are on row %d\n", rows);
 		for (columns = 0; columns < width; columns++)
 		{
-			printf("We are on column %d\n", columns);
 			array[rows][columns] = 0;
 		}
 	}
