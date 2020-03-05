@@ -13,4 +13,7 @@ unsigned int _strlen(char *s);
 /* declaration of function to allocate memory for an array and set to 0 (2)*/
 void *_calloc(unsigned int nmemb, unsigned int size);
 
+/* declaration of function to allocate array of ints from min to max (3)*/
+int *array_range(int min, int max);
+
 #endif
