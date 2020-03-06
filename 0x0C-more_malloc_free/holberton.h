@@ -16,4 +16,28 @@ void *_calloc(unsigned int nmemb, unsigned int size);
 /* declaration of function to allocate array of ints from min to max (3)*/
 int *array_range(int min, int max);
 
+/* declaration of function to print product of two arguments (5)*/
+int main(int argc, char *argv[]);
+
+/*declaration of subfunction to print error if failed (5)*/
+void error(char *array);
+
+/*declaration of subfunction to check if char of arguments are digits (5)*/
+int digit_check(char *num);
+
+/*declaration of subfunction to change character into integer (5)*/
+unsigned int a_to_int(char *s);
+
+/*declaration of subfunction to determine how many digits a number has (5)*/
+int digit_size(unsigned int num, int digits);
+
+/* declaration of subfunction to change interger into character array (5)*/
+char *int_to_a(unsigned int num, char *s, int digits);
+
+/* declaration of subfunction to print array of characters (5)*/
+void print_array(char *s);
+
+/* declaration of putchar function */
+int _putchar(char c);
+
 #endif
