@@ -38,7 +38,7 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 	transfer = malloc(sizeof(char) * new_size);
 	if (transfer == NULL)
 		return (NULL);
-	if (old_size <= new_size)
+	if (old_size < new_size)
 	{
 		for (i = 0; i < old_size; i++)
 			transfer[i] = holder[i];
