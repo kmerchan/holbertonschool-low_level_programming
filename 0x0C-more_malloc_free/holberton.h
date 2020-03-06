@@ -26,13 +26,13 @@ void error(char *array);
 int digit_check(char *num);
 
 /*declaration of subfunction to change character into integer (5)*/
-unsigned int a_to_int(char *s);
+unsigned long int a_to_int(char *s);
 
 /*declaration of subfunction to determine how many digits a number has (5)*/
-int digit_size(unsigned int num, int digits);
+int digit_size(unsigned long int num, int digits);
 
 /* declaration of subfunction to change interger into character array (5)*/
-char *int_to_a(unsigned int num, char *s, int digits);
+char *int_to_a(unsigned long int num, char *s, int digits);
 
 /* declaration of subfunction to print array of characters (5)*/
 void print_array(char *s);
