@@ -13,7 +13,7 @@
 
 int main(int argc, char *argv[])
 {
-	unsigned int num1, num2, product;
+	unsigned long int num1, num2, product;
 	int digit;
 	char *array;
 	char *errorarray = "Error";
@@ -90,10 +90,10 @@ int digit_check(char *num)
  * Return: integer value of characters
  */
 
-unsigned int a_to_int(char *s)
+unsigned long int a_to_int(char *s)
 {
 	int i = 0, size = 0, place = 1;
-	unsigned int num = 0;
+	unsigned long int num = 0;
 
 	for (i = 0; s[i]; i++, size++)
 		continue;
@@ -114,7 +114,7 @@ unsigned int a_to_int(char *s)
  * Return: number of digit places
  */
 
-int digit_size(unsigned int num, int digits)
+int digit_size(unsigned long int num, int digits)
 {
 	while (num / 10 != 0)
 	{
@@ -135,7 +135,7 @@ int digit_size(unsigned int num, int digits)
  * Return: array of characters representing number
  */
 
-char *int_to_a(unsigned int num, char *s, int digits)
+char *int_to_a(unsigned long int num, char *s, int digits)
 {
 	int i = 0;
 
