@@ -43,11 +43,13 @@ int main(int argc, char *argv[])
 	}
 	array = int_to_a(product, array, digit);
 	print_array(array);
+	free(array);
 	return (0);
 }
 
 /**
  * error - function to print Error and exit with 98 if program fails
+ * @array: character array to print
  *
  */
 
