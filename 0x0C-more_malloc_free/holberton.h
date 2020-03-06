@@ -16,8 +16,8 @@ void *_calloc(unsigned int nmemb, unsigned int size);
 /* declaration of function to allocate array of ints from min to max (3)*/
 int *array_range(int min, int max);
 
-/* declaration of function to print product of two arguments (5)*/
-int main(int argc, char *argv[]);
+/* declaration of function to reallocate memory (4)*/
+void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
 
 /*declaration of subfunction to print error if failed (5)*/
 void error(char *array);
