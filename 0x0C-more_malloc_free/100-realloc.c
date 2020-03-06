@@ -35,7 +35,6 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 	}
 
 	holder = (char *)ptr;
-
 	transfer = malloc(sizeof(char) * new_size);
 	if (transfer == NULL)
 		return (NULL);
@@ -46,13 +45,12 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 	}
 	else
 	{
-		for (i = 0; i < new_size, i++)
+		for (i = 0; i < new_size; i++)
 			transfer[i] = holder[i];
 	}
 	free(ptr);
 	free(holder);
-
 	pointer = (void *)transfer;
-
+	free(transfer);
 	return (pointer);
 }
