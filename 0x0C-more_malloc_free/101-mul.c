@@ -139,12 +139,12 @@ char *int_to_a(unsigned int num, char *s, int digits)
 {
 	int i = 0;
 
-	s[digits] = '\0';
-	for (i = (digits - 1); i >= 0; i++)
+	for (i = (digits - 1); i >= 0; i--)
 	{
-		s[i] = (num % 10);
+		s[i] = (num % 10) + '0';
 		num /= 10;
 	}
+	s[digits] = '\0';
 	return (s);
 }
 
@@ -162,5 +162,5 @@ void print_array(char *s)
 	{
 		_putchar(s[i]);
 	}
-	_putchar('\0');
+	_putchar('\n');
 }
