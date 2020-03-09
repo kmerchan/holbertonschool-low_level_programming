@@ -1,5 +1,5 @@
 #include <stdlib.h>
-#include "holberton.h"
+#include <stdio.h>
 
 /**
  * main - prints the name of the file it was compiled from
@@ -10,13 +10,6 @@
 
 int main(void)
 {
-	int i;
-	char s[] = __BASE_FILE__;
-
-	for (i = 0; s[i]; i++)
-	{
-		_putchar(s[i]);
-	}
-	_putchar('\n');
+	printf("%s\n",__BASE_FILE__);
 	return (0);
 }
