@@ -1,3 +1,5 @@
+#define NULL 0
+
 /**
  * print_name - function that prints a name
  * @name: input string containing name
@@ -7,5 +9,6 @@
 
 void print_name(char *name, void (*f)(char *))
 {
-	(*f)(name);
+	if (name != NULL)
+		(*f)(name);
 }
