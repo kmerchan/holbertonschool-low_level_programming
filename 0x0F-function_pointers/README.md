@@ -1,0 +1,1 @@
+This directory contains work with pointers to functions.
