@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
 	if (x < 0)
 	{
 		printf("Error\n");
-		exit(1);
+		exit(2);
 	}
 	return (0);
 }
