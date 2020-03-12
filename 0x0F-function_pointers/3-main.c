@@ -12,9 +12,9 @@
  * Return: int result of performing operation or error if unable to compute
  */
 
-int main(int argc, char *argv)
+int main(int argc, char *argv[])
 {
-	int a, b, x;
+	int a, b;
 
 	int (*f)(int, int);
 
@@ -25,17 +25,17 @@ int main(int argc, char *argv)
 	}
 	a = atoi(argv[1]);
 	b = atoi(argv[3]);
+	if (b == 0 && (strcmp("/", argv[2]) == 0 || strcmp("%", argv[2]) == 0))
+	{
+		printf("Error\n");
+		exit(100);
+	}
 	f = get_op_func(argv[2]);
 	if (f == NULL)
 	{
 		printf("Error\n");
 		exit(99);
 	}
-	x = f(a, b);
-	if (x == NULL)
-	{
-		printf("Error\n");
-		exit(100);
-	}
-	return (x);
+	printf("%d\n", f(a, b));
+	return (0);
 }
