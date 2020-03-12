@@ -3,6 +3,9 @@
 
 /**
  * main - prints the opcodes of its own main function
+ * @argc: number of program arguments
+ *
+ * @argv: array of input arguments
  *
  * Return: 0
  */
