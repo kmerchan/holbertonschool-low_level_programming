@@ -1,5 +1,7 @@
 #include "3-calc.h"
 #include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
 
 /**
  * main - perform input operation of two ints using input operator
@@ -14,7 +16,7 @@ int main(int argc, char *argv)
 {
 	int a, b, x;
 
-	int ((*f)(char *s))(int, int);
+	int (*f)(int, int);
 
 	if (argc != 4)
 	{
