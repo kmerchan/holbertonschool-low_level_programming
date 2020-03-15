@@ -11,30 +11,83 @@
 void print_all(const char * const format, ...)
 {
 	va_list args;
-	unsigned int i = 0;
-	unsigned int j = 0;
-	char *string;
+	int counter = 0;
+	int array_index = 0;
+	void (*cptr)(int) = &printc;
+	void (*iptr)(int) = &printi;
+	void (*ftptr)(int) = &printft;
+	void (*sptr)(int) = &prints;
+	char array[4][4];
 
-	while (format[i])
-		i++;
-	va_start(args, i);
-	while (j < i)
+	array = {
+		{'c', cptr(va_arg(args, int))}
+		{'i', iptr(va_arg(args, int))}
+		{'f', ftptr(va_arg(args, double))}
+		{'s', sptr(va_arg(args, char *))}
+	};
+	va_start(args, format);
+	while (format[counter] != NULL)
 	{
-
-	}
-	for (i = 0; i < n; i++)
-	{
-		string = va_arg(args, char *);
-		if (string == NULL)
-			string = "(nil)";
-		if (i != (n - 1))
+		while (array_index < 5)
 		{
-			printf("%s", string);
-			if (separator != NULL)
-				printf("%s", separator);
+			if (format[counter] == array[array_index][0])
+			{
+				array[array_index][1];
+				if (format[counter + 1] != NULL)
+					printf(", ");
+			}
+			array_index++;
 		}
-		else
-			printf("%s\n", string);
+		counter++;
 	}
 	va_end(args);
+}
+
+/**
+ * printc - printf with character
+ * @c: integer value of single character to print
+ *
+ */
+
+void printc(int c);
+{
+	printf("%c", c);
+}
+
+/**
+ * printi - printf with integer
+ * @i: integer value to print
+ *
+ */
+
+void printi(int i);
+{
+	printf("%i", i);
+}
+
+/**
+ * printft - printf with float
+ * @f: float value to print
+ *
+ */
+
+void printft(double f);
+{
+	printf("%f", f);
+}
+
+/**
+ * prints - printf with string
+ * @s: character pointer to string of character to print
+ *
+ */
+
+void prints(char *s);
+{
+	if (s != NULL)
+	{
+		printf("%s", s);
+		return;
+	}
+	printf("(nil)");
 }
