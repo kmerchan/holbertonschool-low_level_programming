@@ -1,6 +1,20 @@
 #ifndef VARIADIC_H
 #define VARIADIC_H
 
+/**
+ * struct formatting - structure to match type character with format func
+ * @c: character of type
+ *
+ * @func: name of function to call
+ *
+ */
+
+typedef struct formatting
+{
+	char *c;
+	void (*func)(va_list);
+} frmt;
+
 /* declaration of function to sum all arguments (0)*/
 int sum_them_all(const unsigned int n, ...);
 
@@ -18,20 +32,5 @@ void printc(int c);
 void printi(int i);
 void printft(double ft);
 void prints(char *s);
-
-/**
- * struct frmt - structure to match type character with format func
- * @c: character of type
- *
- * @func: name of function to call
- *
- */
-
-typedef struct formatting
-{
-	char c;
-	void (*func)(va_list);
-} frmt;
-
 
 #endif
