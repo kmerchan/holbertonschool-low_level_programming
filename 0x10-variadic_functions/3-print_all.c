@@ -51,10 +51,9 @@ void print_all(const char * const format, ...)
  *
  */
 
-void printc(va_list c)
+void printc(va_list args)
 {
-	c = va_arg(args, int);
-	printf("%c", c);
+	printf("%c", va_arg(args, int));
 }
 
 /**
@@ -63,10 +62,9 @@ void printc(va_list c)
  *
  */
 
-void printi(va_list i)
+void printi(va_list args)
 {
-	i = va_arg(args, int);
-	printf("%i", i);
+	printf("%i", va_arg(args, int));
 }
 
 /**
@@ -75,10 +73,9 @@ void printi(va_list i)
  *
  */
 
-void printft(va_list f)
+void printft(va_list args)
 {
-	f = va_arg(args, double);
-	printf("%f", f);
+	printf("%f", va_arg(args, double));
 }
 
 /**
@@ -87,9 +84,9 @@ void printft(va_list f)
  *
  */
 
-void prints(va_list s)
+void prints(va_list args)
 {
-	s = va_arg(args, char *);
+	char *s = va_arg(args, char *);
 	if (s != NULL)
 	{
 		printf("%s", s);
