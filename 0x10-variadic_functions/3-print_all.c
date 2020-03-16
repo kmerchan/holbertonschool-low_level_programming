@@ -12,31 +12,26 @@ void print_all(const char * const format, ...)
 {
 	va_list args;
 	int counter = 0;
-	int array_index = 0;
-	void (*cptr)(int) = &printc;
-	void (*iptr)(int) = &printi;
-	void (*ftptr)(int) = &printft;
-	void (*sptr)(int) = &prints;
-	char array[4][4];
-
-	array = {
-		{'c', cptr(va_arg(args, int))}
-		{'i', iptr(va_arg(args, int))}
-		{'f', ftptr(va_arg(args, double))}
-		{'s', sptr(va_arg(args, char *))}
+	int index = 0;
+	frmt array[] = {
+		{'c', printc},
+		{'i', printi},
+		{'f', printft},
+		{'s', prints}
 	};
+
 	va_start(args, format);
-	while (format[counter] != NULL)
+	while (format[counter])
 	{
-		while (array_index < 5)
+		while (index < 4)
 		{
-			if (format[counter] == array[array_index][0])
+			if (format[counter] == *(array[index].c))
 			{
-				array[array_index][1];
+				array[index].func(args);
 				if (format[counter + 1] != NULL)
 					printf(", ");
 			}
-			array_index++;
+			index++;
 		}
 		counter++;
 	}
@@ -49,7 +44,7 @@ void print_all(const char * const format, ...)
  *
  */
 
-void printc(int c);
+void printc(int c)
 {
 	printf("%c", c);
 }
@@ -60,7 +55,7 @@ void printc(int c);
  *
  */
 
-void printi(int i);
+void printi(int i)
 {
 	printf("%i", i);
 }
@@ -71,7 +66,7 @@ void printi(int i);
  *
  */
 
-void printft(double f);
+void printft(double f)
 {
 	printf("%f", f);
 }
@@ -82,7 +77,7 @@ void printft(double f);
  *
  */
 
-void prints(char *s);
+void prints(char *s)
 {
 	if (s != NULL)
 	{

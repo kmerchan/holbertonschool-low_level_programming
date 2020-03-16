@@ -13,4 +13,25 @@ void print_strings(const char *separator, const unsigned int n, ...);
 /* declaration of function to print all arguments of varying types (3)*/
 void print_all(const char * const format, ...);
 
+/* declaration of functions to print with formatting */
+void printc(int c);
+void printi(int i);
+void printft(double ft);
+void prints(char *s);
+
+/**
+ * struct frmt - structure to match type character with format func
+ * @c: character of type
+ *
+ * @func: name of function to call
+ *
+ */
+
+typedef struct formatting
+{
+	char c;
+	void (*func)(va_list);
+} frmt;
+
+
 #endif
