@@ -14,10 +14,10 @@ void print_all(const char * const format, ...)
 	int counter = 0;
 	int index = 0;
 	frmt array[] = {
-		{'c', &printc},
-		{'i', &printi},
-		{'f', &printft},
-		{'s', &prints},
+		{"c", &printc},
+		{"i", &printi},
+		{"f", &printft},
+		{"s", &prints},
 		{NULL, NULL}
 	};
 	char *separator = "";
@@ -38,7 +38,7 @@ void print_all(const char * const format, ...)
 		}
 		counter++;
 	}
-	printf('\n');
+	printf("\n");
 	va_end(args);
 }
 
