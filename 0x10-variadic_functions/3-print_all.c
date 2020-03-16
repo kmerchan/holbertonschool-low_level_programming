@@ -14,27 +14,31 @@ void print_all(const char * const format, ...)
 	int counter = 0;
 	int index = 0;
 	frmt array[] = {
-		{'c', printc},
-		{'i', printi},
-		{'f', printft},
-		{'s', prints}
+		{'c', &printc},
+		{'i', &printi},
+		{'f', &printft},
+		{'s', &prints},
+		{NULL, NULL}
 	};
+	char *separator = "";
 
 	va_start(args, format);
-	while (format[counter])
+	while (format && format[counter])
 	{
-		while (index < 4)
+		index = 0;
+		while (array[index].c)
 		{
 			if (format[counter] == *(array[index].c))
 			{
+				printf("%s", separator);
 				array[index].func(args);
-				if (format[counter + 1] != NULL)
-					printf(", ");
+				separator = ", ";
 			}
 			index++;
 		}
 		counter++;
 	}
+	printf('\n');
 	va_end(args);
 }
 
