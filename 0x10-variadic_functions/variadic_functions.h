@@ -12,7 +12,7 @@
 typedef struct formatting
 {
 	char *c;
-	void (*func)(va_list);
+	void (*func)();
 } frmt;
 
 /* declaration of function to sum all arguments (0)*/
@@ -28,9 +28,9 @@ void print_strings(const char *separator, const unsigned int n, ...);
 void print_all(const char * const format, ...);
 
 /* declaration of functions to print with formatting */
-void printc(int c);
-void printi(int i);
-void printft(double ft);
-void prints(char *s);
+void printc(va_list);
+void printi(va_list);
+void printft(va_list);
+void prints(va_list);
 
 #endif
