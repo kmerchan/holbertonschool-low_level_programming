@@ -1,6 +1,7 @@
-#include <stdarg.h>
 #ifndef VARIADIC_H
 #define VARIADIC_H
+
+#include <stdarg.h>
 
 /**
  * struct formatting - structure to match type character with format func
