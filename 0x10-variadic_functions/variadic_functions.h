@@ -28,9 +28,9 @@ void print_strings(const char *separator, const unsigned int n, ...);
 void print_all(const char * const format, ...);
 
 /* declaration of functions to print with formatting */
-void printc();
-void printi();
-void printft();
-void prints();
+void printc(va_list);
+void printi(va_list);
+void printft(va_list);
+void prints(va_list);
 
 #endif

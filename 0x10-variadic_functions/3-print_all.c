@@ -47,7 +47,7 @@ void print_all(const char * const format, ...)
 
 /**
  * printc - printf with character
- * @c: integer value of single character to print
+ * @args: integer value of single character to print
  *
  */
 
@@ -58,7 +58,7 @@ void printc(va_list args)
 
 /**
  * printi - printf with integer
- * @i: integer value to print
+ * @args: integer value to print
  *
  */
 
@@ -69,7 +69,7 @@ void printi(va_list args)
 
 /**
  * printft - printf with float
- * @f: float value to print
+ * @args: float value to print
  *
  */
 
@@ -80,13 +80,14 @@ void printft(va_list args)
 
 /**
  * prints - printf with string
- * @s: character pointer to string of character to print
+ * @args: character pointer to string of character to print
  *
  */
 
 void prints(va_list args)
 {
 	char *s = va_arg(args, char *);
+
 	if (s != NULL)
 	{
 		printf("%s", s);
