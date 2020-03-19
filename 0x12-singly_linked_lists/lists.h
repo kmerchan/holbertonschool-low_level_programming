@@ -3,6 +3,8 @@
 
 /* Included Libraries */
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 /* Structs */
 /**
@@ -29,5 +31,11 @@ size_t print_list(const list_t *h);
 
 /* declaration of function to count all elements of a list_t list */
 size_t list_len(const list_t *h);
+
+/* declaration of function to add a node to a list_t list */
+list_t *add_node(list_t **head, const char *str);
+
+/* declaration of function to determine length of string */
+int string_length(const char *s);
 
 #endif
