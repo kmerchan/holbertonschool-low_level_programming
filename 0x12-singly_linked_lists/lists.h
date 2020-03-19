@@ -27,4 +27,7 @@ typedef struct list_s
 /* declaration of function to print all elements of a list_t list */
 size_t print_list(const list_t *h);
 
+/* declaration of function to count all elements of a list_t list */
+size_t list_len(const list_t *h);
+
 #endif
