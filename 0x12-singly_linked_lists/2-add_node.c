@@ -24,8 +24,13 @@ list_t *add_node(list_t **head, const char *str)
 		return (NULL);
 	}
 	new->len = string_length(str);
-	new->next = previous;
-	return(new);
+	new->next = NULL;
+	if (previous == NULL)
+		return (new);
+	while (previous->next != NULL)
+		previous = previous->next;
+	previous->next = new;
+	return (previous);
 }
 
 /**
