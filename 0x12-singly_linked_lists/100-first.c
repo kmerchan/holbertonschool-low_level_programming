@@ -4,7 +4,7 @@
  * first - prints phrase before main function is executed
  *
  */
-__attribute__((constructor))
+void first(void) __attribute__((constructor))
 
 void first(void)
 {
