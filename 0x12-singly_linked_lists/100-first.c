@@ -1,10 +1,11 @@
 #include "lists.h"
 
+void first(void) __attribute__((constructor));
+
 /**
  * first - prints phrase before main function is executed
  *
  */
-void first(void) __attribute__((constructor))
 
 void first(void)
 {
