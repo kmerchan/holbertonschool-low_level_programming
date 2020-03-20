@@ -41,4 +41,7 @@ list_t *add_node_end(list_t **head, const char *str);
 /* declaration of function to determine length of string */
 int string_length(const char *s);
 
+/* declaration of function to free a list_t list */
+void free_list(list_t *head);
+
 #endif
