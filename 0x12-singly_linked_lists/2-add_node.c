@@ -6,7 +6,7 @@
  *
  * @str: input character string to add to list_t list
  *
- * Return: Number of nodes
+ * Return: pointer to new head of list
  */
 
 list_t *add_node(list_t **head, const char *str)
