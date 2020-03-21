@@ -1,3 +1,6 @@
+#ifndef HOLBERTON_H
+#define HOLBERTON_H
+
 /* declaration for _putchar function */
 int _putchar(char c);
 
@@ -30,3 +33,8 @@ void print_square(int size);
 
 /* declaration for function to print left-justified triangle (10)*/
 void print_triangle(int size);
+
+/* declaration for function to print numbers (12)*/
+void print_number(int n);
+
+#endif
