@@ -39,4 +39,7 @@ void free_listint(listint_t *head);
 /* declaration of function to free mem of listint_t list & set head to NULL(5)*/
 void free_listint2(listint_t **head);
 
+/* declaration of function to delete the head node of a listint_t list (6)*/
+int pop_listint(listint_t **head);
+
 #endif
