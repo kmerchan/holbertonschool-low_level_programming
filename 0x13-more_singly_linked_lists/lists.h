@@ -30,4 +30,7 @@ size_t listint_len(const listint_t *h);
 /* declaration of function to add new node to beginning of listint_t list (2)*/
 listint_t *add_nodeint(listint_t **head, const int n);
 
+/* declaration of function to add new node to end of listint_t list (3)*/
+listint_t *add_nodeint_end(listint_t **head, const int n);
+
 #endif
