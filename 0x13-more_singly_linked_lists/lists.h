@@ -33,4 +33,10 @@ listint_t *add_nodeint(listint_t **head, const int n);
 /* declaration of function to add new node to end of listint_t list (3)*/
 listint_t *add_nodeint_end(listint_t **head, const int n);
 
+/* declaration of function to free memory of listint_t list (4)*/
+void free_listint(listint_t *head);
+
+/* declaration of function to free mem of listint_t list & set head to NULL(5)*/
+void free_listint2(listint_t **head);
+
 #endif
