@@ -16,8 +16,8 @@
  */
 typedef struct listint_s
 {
-    int n;
-    struct listint_s *next;
+	int n;
+	struct listint_s *next;
 } listint_t;
 
 /* Function Prototypes */
@@ -36,7 +36,7 @@ listint_t *add_nodeint_end(listint_t **head, const int n);
 /* declaration of function to free memory of listint_t list (4)*/
 void free_listint(listint_t *head);
 
-/* declaration of function to free mem of listint_t list & set head to NULL(5)*/
+/* declaration of function to free memory of list & set head to NULL(5)*/
 void free_listint2(listint_t **head);
 
 /* declaration of function to delete the head node of a listint_t list (6)*/
@@ -48,10 +48,10 @@ listint_t *get_nodeint_at_index(listint_t *head, unsigned int index);
 /*declaration of function to sum data from all nodes of listint_t list (8)*/
 int sum_listint(listint_t *head);
 
-/*declaration of function to add new node at given index in listint_t list (9)*/
+/*declaration of function to add new node at given index in list (9)*/
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n);
 
-/*declaration of function to delete node at given index in listint_t list (10)*/
+/*declaration of function to delete node at given index in list (10)*/
 int delete_nodeint_at_index(listint_t **head, unsigned int index);
 
 #endif
