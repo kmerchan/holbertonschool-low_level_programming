@@ -54,4 +54,7 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n);
 /*declaration of function to delete node at given index in list (10)*/
 int delete_nodeint_at_index(listint_t **head, unsigned int index);
 
+/*declaration of function to reverse listint_t list (11)*/
+listint_t *reverse_listint(listint_t **head);
+
 #endif
