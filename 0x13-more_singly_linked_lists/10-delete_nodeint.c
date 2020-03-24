@@ -4,7 +4,7 @@
  * delete_nodeint_at_index - deletes node at given index
  * @head: pointer to input head of singly linked list
  *
- * @idx: index to add new node at, starting at 0
+ * @index: index to add new node at, starting at 0
  *
  * Return: 1 if successful, -1 if failed
  */
