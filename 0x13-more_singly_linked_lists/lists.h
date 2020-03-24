@@ -48,4 +48,7 @@ listint_t *get_nodeint_at_index(listint_t *head, unsigned int index);
 /*declaration of function to sum data from all nodes of listint_t list (8)*/
 int sum_listint(listint_t *head);
 
+/*declaration of function to add new node at given index in listint_t list (9)*/
+listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n);
+
 #endif
