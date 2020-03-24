@@ -42,4 +42,10 @@ void free_listint2(listint_t **head);
 /* declaration of function to delete the head node of a listint_t list (6)*/
 int pop_listint(listint_t **head);
 
+/* declaration of function to return the nth node of a listint_t list (7)*/
+listint_t *get_nodeint_at_index(listint_t *head, unsigned int index);
+
+/*declaration of function to sum data from all nodes of listint_t list (8)*/
+int sum_listint(listint_t *head);
+
 #endif
