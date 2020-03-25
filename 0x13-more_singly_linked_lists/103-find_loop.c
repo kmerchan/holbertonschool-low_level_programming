@@ -9,16 +9,27 @@
 
 listint_t *find_listint_loop(listint_t *head)
 {
-	if (head == NULL)
+	listint_t *turtle, *hare;
+
+	if (head == NULL || head->next == NULL)
 		return (NULL);
-	while (head->next != NULL)
+	turtle = head;
+	hare = head;
+	while (hare->next != NULL && hare->next->next != NULL)
 	{
-		if (head->next >= head)
+		turtle = turtle->next;
+		hare = hare->next->next;
+		if (turtle == hare)
 		{
-			head = head->next;
-			return (head);
+			turtle = head;
+			while (hare != NULL)
+			{
+				turtle = turtle->next;
+				hare = hare->next;
+				if (turtle == hare)
+					return (turtle);
+			}
 		}
-		head = head->next;
 	}
 	return (NULL);
 }
