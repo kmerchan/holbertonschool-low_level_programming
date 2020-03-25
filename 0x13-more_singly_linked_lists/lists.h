@@ -60,4 +60,7 @@ listint_t *reverse_listint(listint_t **head);
 /*declaration of function to print listint_t list, check for same node (12)*/
 size_t print_listint_safe(const listint_t *head);
 
+/*declaration of function to free listint_t list, check for same node (13)*/
+size_t free_listint_safe(listint_t **h);
+
 #endif
