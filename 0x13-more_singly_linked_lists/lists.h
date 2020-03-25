@@ -63,4 +63,7 @@ size_t print_listint_safe(const listint_t *head);
 /*declaration of function to free listint_t list, check for same node (13)*/
 size_t free_listint_safe(listint_t **h);
 
+/*declaration of function to find the start of loop in listint_t list (14)*/
+listint_t *find_listint_loop(listint_t *head);
+
 #endif
