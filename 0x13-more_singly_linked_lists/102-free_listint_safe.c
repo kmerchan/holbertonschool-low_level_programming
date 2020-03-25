@@ -22,7 +22,6 @@ size_t free_listint_safe(listint_t **h)
 		{
 			if ((*h) == array[i])
 			{
-				free(*h);
 				(*h) = NULL;
 				return (n);
 			}
