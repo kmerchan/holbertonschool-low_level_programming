@@ -1,5 +1,4 @@
 #include "lists.h"
-#include <limits.h>
 
 /**
  * print_listint_safe - prints all the elements of a listint_t list
@@ -12,7 +11,7 @@ size_t print_listint_safe(const listint_t *head)
 {
 	size_t n = 0;
 	size_t i = 0, j = 0;
-	int *array[999];
+	int *array[9999];
 
 	while (head != NULL)
 	{
@@ -21,7 +20,7 @@ size_t print_listint_safe(const listint_t *head)
 			if ((int *)head == array[i])
 			{
 				printf("-> [%p] %d\n", (void *)head, head->n);
-				exit(98);
+				return (n);
 			}
 		}
 		n++;
