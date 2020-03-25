@@ -11,7 +11,7 @@ size_t print_listint_safe(const listint_t *head)
 {
 	size_t n = 0;
 	size_t i = 0, j = 0;
-	int *array[999];
+	int **array;
 
 	while (head != NULL)
 	{
@@ -25,6 +25,12 @@ size_t print_listint_safe(const listint_t *head)
 		}
 		n++;
 		printf("[%p] %d\n", (void *)head, head->n);
+		array = malloc(sizeof(int *));
+		if (array == NULL)
+		{
+			free(array);
+			exit(98);
+		}
 		array[j] = (int *)head;
 		j++;
 		head = head->next;
