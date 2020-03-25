@@ -24,10 +24,10 @@ listint_t *find_listint_loop(listint_t *head)
 			turtle = head;
 			while (hare != NULL)
 			{
-				turtle = turtle->next;
-				hare = hare->next;
 				if (turtle == hare)
 					return (turtle);
+				turtle = turtle->next;
+				hare = hare->next;
 			}
 		}
 	}
