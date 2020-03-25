@@ -57,4 +57,7 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index);
 /*declaration of function to reverse listint_t list (11)*/
 listint_t *reverse_listint(listint_t **head);
 
+/*declaration of function to print listint_t list, check for same node (12)*/
+size_t print_listint_safe(const listint_t *head);
+
 #endif
