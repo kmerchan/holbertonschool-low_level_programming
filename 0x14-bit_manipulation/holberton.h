@@ -20,6 +20,9 @@ int power(int count);
 /* declaration of function to print the binary of unsigned int (1)*/
 void print_binary(unsigned long int n);
 
+/* declaration of function to determine power of 2, 2^(count) */
+unsigned long int power2(int count);
+
 /* declaration of function to return value of bit at index (2)*/
 int get_bit(unsigned long int n, unsigned int index);
 
