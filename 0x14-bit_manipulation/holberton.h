@@ -1,12 +1,21 @@
 #ifndef HOLBERTON_H
 #define HOLBERTON_H
 
+/* INCLUDED LIBRARIES */
+#include <stdio.h>
+
 /* FUNCTION PROTOTYPES */
 /* declaration of putchar function to print characters */
 int _putchar(char c);
 
+/* declaration of function to determine string length */
+int string_length(const char *s);
+
 /* declaration of function to convert binary to unsigned int (0)*/
 unsigned int binary_to_uint(const char *b);
+
+/* declaration of function to determine bit multiplier, 2^(bit count) */
+int power(int count);
 
 /* declaration of function to print the binary of unsigned int (1)*/
 void print_binary(unsigned long int n);
