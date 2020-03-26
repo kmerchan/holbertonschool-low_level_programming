@@ -15,9 +15,8 @@ void print_binary(unsigned long int n)
 		_putchar('0');
 		return;
 	}
-	while (power2(count) <= n)
+	while (power2(count + 1) <= n)
 		count++;
-	count--;
 	for (; count >= 0; count--)
 	{
 		if (power2(count) > n)
