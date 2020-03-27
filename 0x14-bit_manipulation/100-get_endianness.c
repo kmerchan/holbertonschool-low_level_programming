@@ -3,7 +3,7 @@
 /**
  * get_endianness - function to determine how system reads bits
  *
- * Return: 1 if little endian (read from lsb) or 0 if big endian (read from msb)
+ * Return: 1 if little endian (read from lsb) or 0 if big endian (from msb)
  */
 
 int get_endianness(void)
