@@ -35,4 +35,7 @@ int clear_bit(unsigned long int *n, unsigned int index);
 /* declaration of function to find count of bits flipped to change number (5)*/
 unsigned int flip_bits(unsigned long int n, unsigned long int m);
 
+/* declaration of function to find endianess of system (6)*/
+int get_endianness(void);
+
 #endif
