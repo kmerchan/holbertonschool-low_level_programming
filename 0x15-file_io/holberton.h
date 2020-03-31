@@ -1,6 +1,11 @@
 #ifndef HOLBERTON_H
 #define HOLBERTON_H
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <fcntl.h>
+
 /* declaration of function to read text file and print to stdout (0)*/
 ssize_t read_textfile(const char *filename, size_t letters);
 
