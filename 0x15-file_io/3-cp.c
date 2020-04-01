@@ -31,7 +31,7 @@ int main(int argc, char *argv[])
 	fd1 = open(argv[1], O_RDONLY);
 	if (fd1 < 0 || buf == NULL)
 		cant_read(argv[1]);
-	fd2 = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
+	fd2 = open(argv[2], O_CREAT | O_RDWR | O_TRUNC, 0664);
 	if (fd2 < 0)
 		cant_write(argv[2]);
 
@@ -43,7 +43,7 @@ int main(int argc, char *argv[])
 	if (sz2 < 0)
 		cant_write(argv[2]);
 
-	free(buf);
+
 	while (sz1 == 1024)
 	{
 		sz1 = read(fd1, buf, 1024);
@@ -52,8 +52,8 @@ int main(int argc, char *argv[])
 		sz2 = write(fd2, buf, sz1);
 		if (sz2 < 0)
 			cant_write(argv[2]);
-		free(buf);
 	}
+	free(buf);
 
 	if (close(fd1) < 0)
 		cant_close(fd1);
