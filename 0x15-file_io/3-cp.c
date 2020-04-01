@@ -22,6 +22,8 @@ int main(int argc, char *argv[])
 	ssize_t sz1, sz2;
 	char *buf = malloc(sizeof(char) * 1024);
 
+	if (buf == NULL)
+		return (0);
 	if (argc != 3)
 	{
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
@@ -29,7 +31,7 @@ int main(int argc, char *argv[])
 	}
 
 	fd1 = open(argv[1], O_RDONLY);
-	if (fd1 < 0 || buf == NULL)
+	if (fd1 < 0)
 		cant_read(argv[1]);
 	fd2 = open(argv[2], O_CREAT | O_RDWR | O_TRUNC, 0664);
 	if (fd2 < 0)
