@@ -20,10 +20,8 @@ int main(int argc, char *argv[])
 {
 	int fd1, fd2;
 	ssize_t sz1, sz2;
-	char *buf = malloc(sizeof(char) * 1024);
+	char buf[1024];
 
-	if (buf == NULL)
-		return (-1);
 	if (argc != 3)
 	{
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
@@ -55,7 +53,6 @@ int main(int argc, char *argv[])
 		if (sz2 < 0)
 			cant_write(argv[2]);
 	}
-	free(buf);
 
 	if (close(fd1) < 0)
 		cant_close(fd1);
