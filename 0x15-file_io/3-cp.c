@@ -44,6 +44,16 @@ int main(int argc, char *argv[])
 		cant_write(argv[2]);
 
 	free(buf);
+	while (sz1 == 1024)
+	{
+		sz1 = read(fd1, buf, 1024);
+		if (sz1 < 0)
+			cant_read(argv[1]);
+		sz2 = write(fd2, buf, sz1);
+		if (sz2 < 0)
+			cant_write(argv[2]);
+		free(buf);
+	}
 	if (close(fd1) < 0)
 		cant_close(fd1);
 	if (close(fd2) < 0)
