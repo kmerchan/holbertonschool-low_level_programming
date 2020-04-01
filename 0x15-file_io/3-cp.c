@@ -31,7 +31,7 @@ int main(int argc, char *argv[])
 	fd1 = open(argv[1], O_RDONLY);
 	if (fd1 < 0 || buf == NULL)
 		cant_read(argv[1]);
-	fd2 = open(argv[2], O_CREAT | O_RDWR | O_TRUNC, 0664);
+	fd2 = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	if (fd2 < 0)
 		cant_write(argv[2]);
 
@@ -54,6 +54,7 @@ int main(int argc, char *argv[])
 			cant_write(argv[2]);
 		free(buf);
 	}
+
 	if (close(fd1) < 0)
 		cant_close(fd1);
 	if (close(fd2) < 0)
