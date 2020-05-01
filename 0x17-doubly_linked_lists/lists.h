@@ -44,4 +44,7 @@ dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index);
 /* declaration of function to sum data from elements of dlistint_t list (6)*/
 int sum_dlistint(dlistint_t *head);
 
+/* declaration of function to insert newnode at set index in dlistint list (7)*/
+dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n);
+
 #endif
