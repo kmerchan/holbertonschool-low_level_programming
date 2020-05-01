@@ -35,4 +35,10 @@ dlistint_t *add_dnodeint(dlistint_t **head, const int n);
 /* declaration of function to add new node to end of doubly linked list */
 dlistint_t *add_dnodeint_end(dlistint_t **head, const int n);
 
+/* declaration of function to free all elements of a doubly linked list */
+void free_dlistint(dlistint_t *head);
+
+/* declaration of function to return the nth node of a doubly linked list */
+dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index);
+
 #endif
