@@ -23,7 +23,10 @@ typedef struct dlistint_s
 } dlistint_t;
 
 /* FUNCTION PROTOTYPES */
-/* Declaration of function to print all elements of a doubly linked list */
+/* declaration of function to print all elements of a doubly linked list */
 size_t print_dlistint(const dlistint_t *h);
+
+/* declaration of funtion to return number of nodes of a doubly linked list */
+size_t dlistint_len(const dlistint_t *h);
 
 #endif
