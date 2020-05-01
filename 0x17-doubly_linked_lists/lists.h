@@ -29,4 +29,7 @@ size_t print_dlistint(const dlistint_t *h);
 /* declaration of funtion to return number of nodes of a doubly linked list */
 size_t dlistint_len(const dlistint_t *h);
 
+/* declaration of function to add new node to the start of doubly linked list */
+dlistint_t *add_dnodeint(dlistint_t **head, const int n);
+
 #endif
