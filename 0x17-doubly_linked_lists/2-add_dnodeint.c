@@ -32,6 +32,7 @@ dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 	}
 	/* set newnode to point to start of list & head to point to newnode */
 	newnode->next = *head;
+	(*head)->prev = newnode;
 	*head = newnode;
 	return (newnode);
 }
