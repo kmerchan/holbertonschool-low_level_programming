@@ -3,6 +3,8 @@
 #include <stdio.h>
 #include "lists.h"
 
+size_t print_dlistint_backwards(dlistint_t *h);
+
 /**
  * main - check the code for Holberton School students.
  *
@@ -37,6 +39,10 @@ int main(void)
 	printf("attempt to insert past idx-----------------\n");
 	insert_dnodeint_at_index(&head, 100, 2);
 	print_dlistint(head);
+	printf("Final list forwards:\n");
+	print_dlistint(head);
+	printf("Final list backwards:\n");
+	print_dlistint_backwards(head);
 	free_dlistint(head);
 	head = NULL;
 	return (EXIT_SUCCESS);
