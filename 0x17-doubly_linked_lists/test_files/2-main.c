@@ -13,7 +13,15 @@ int main(void)
 	dlistint_t *head;
 
 	head = NULL;
+	printf("Add new element if passed NULL:\n");
+	head = add_dnodeint(NULL, -20);
+	print_dlistint(head);
+	free_dlistint(head);
+	head = NULL;
+	printf("Add new node to empty list:\n");
 	add_dnodeint(&head, 0);
+	print_dlistint(head);
+	printf("Add new nodes to existing list:\n");
 	add_dnodeint(&head, 1);
 	add_dnodeint(&head, 2);
 	add_dnodeint(&head, 3);
@@ -22,5 +30,6 @@ int main(void)
 	add_dnodeint(&head, 402);
 	add_dnodeint(&head, 1024);
 	print_dlistint(head);
+	free_dlistint(head);
 	return (EXIT_SUCCESS);
 }
