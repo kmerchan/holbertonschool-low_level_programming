@@ -47,4 +47,7 @@ int sum_dlistint(dlistint_t *head);
 /* declaration of function to insert newnode at set index in dlistint list (7)*/
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n);
 
+/* declaration of function to delete node at given index in dlistint list (8)*/
+int delete_dnodeint_at_index(dlistint_t **head, unsigned int index);
+
 #endif
