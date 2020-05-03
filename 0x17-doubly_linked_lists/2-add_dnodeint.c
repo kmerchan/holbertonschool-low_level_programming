@@ -18,13 +18,19 @@ dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 	newnode->prev = NULL;
 	newnode->next = NULL;
 
+	/* check for no list (head == NULL) & set newnode to be only element */
 	if (head == NULL)
-		return (NULL);
+	{
+		head = &newnode;
+		return (newnode);
+	}
+	/* check for empty list (*head == NULL) & set newnode to only element */
 	if (*head == NULL)
 	{
 		*head = newnode;
 		return (newnode);
 	}
+	/* set newnode to point to start of list & head to point to newnode */
 	newnode->next = *head;
 	*head = newnode;
 	return (newnode);
