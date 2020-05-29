@@ -22,6 +22,8 @@ int main(void)
 	hash_table_set(ht, "Asterix", "Obelix");
 	hash_table_set(ht, "Betty", "Holberton");
 	hash_table_set(ht, "98", "Battery Streetz");
+	hash_table_set(ht, "", "Battery Streetz");
+	hash_table_set(ht, "98", "");
 	key = strdup("Tim");
 	value = strdup("Britton");
 	hash_table_set(ht, key, value);
