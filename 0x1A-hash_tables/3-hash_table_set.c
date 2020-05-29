@@ -33,23 +33,23 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	}
 	index = (hash_djb2((unsigned char *)key) % ht->size);
 	if (ht->array[index] == NULL)
-		ht->array[index] = new_node;
-	else
 	{
-		mover = ht->array[index];
-		while (mover->next != NULL)
-		{
-			if (strcmp(mover->key, key) == 0)
-			{
-				free_dups(&new_node, &key_duplicate, &(mover->value));
-				mover->value = value_duplicate;
-				return (1);
-			}
-			mover = mover->next;
-		}
-		new_node->next = ht->array[index];
 		ht->array[index] = new_node;
+		return (1);
 	}
+	mover = ht->array[index];
+	while (mover->next != NULL)
+	{
+		if (strcmp(mover->key, key) == 0)
+		{
+			free_dups(&new_node, &key_duplicate, &(mover->value));
+			mover->value = value_duplicate;
+			return (1);
+		}
+		mover = mover->next;
+	}
+	new_node->next = ht->array[index];
+	ht->array[index] = new_node;
 	return (1);
 }
 
