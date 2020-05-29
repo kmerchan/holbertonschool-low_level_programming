@@ -40,16 +40,15 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		while (mover->next != NULL)
 		{
 			if (strcmp(mover->key, key) == 0)
-				break;
+			{
+				free_dups(&new_node, &key_duplicate, &(mover->value));
+				mover->value = value_duplicate;
+				return (1);
+			}
 			mover = mover->next;
 		}
-		if (strcmp(mover->key, key) == 0)
-		{
-			free_dups(&new_node, &key_duplicate, &(mover->value));
-			mover->value = value_duplicate;
-		}
-		else
-			mover->next = new_node;
+		new_node->next = ht->array[index];
+		ht->array[index] = new_node;
 	}
 	return (1);
 }
