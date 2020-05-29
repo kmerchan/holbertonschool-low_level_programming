@@ -51,6 +51,12 @@ unsigned long int key_index(const unsigned char *key, unsigned long int size);
 
 /* declaration of function that adds an element to the hash table (3)*/
 int hash_table_set(hash_table_t *ht, const char *key, const char *value);
+/* declaration of subfunction to duplicate the key/value string */
+char *duplicate_string(const char *string);
+/* declaration of subfunction to create and initialize new node of hash table*/
+hash_node_t *initialize_new_node(char *key_duplicate, char *value_duplicate);
+/* declaration of subfunction to free dups if exit failure or node re-set */
+void free_dups(hash_node_t **new_node, char **key, char **value);
 
 /* declaration of function that returns the value associated with a key (4)*/
 char *hash_table_get(const hash_table_t *ht, const char *key);
