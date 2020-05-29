@@ -10,6 +10,7 @@
  */
 int main(void)
 {
+	int check = 0;
 	hash_table_t *ht;
 	unsigned long int index;
 
@@ -27,6 +28,15 @@ int main(void)
 	hash_table_set(ht, "stylist", "value1");
 	hash_table_set(ht, "subgenera", "value2");
 	index = (hash_djb2((unsigned char *)"stylist") % 1024);
+	printf("key: %s\n", ht->array[index]->key);
+	printf("value: %s\n", ht->array[index]->value);
+	printf("key: %s\n", ht->array[index]->next->key);
+	printf("value: %s\n", ht->array[index]->next->value);
+	printf("-----empty string key-----\n");
+	check = hash_table_set(ht, "", "");
+	printf("check: %d\n", check);
+	printf("-----empty string value-----\n");
+	check = hash_table_set(ht, "stylist", "");
 	printf("key: %s\n", ht->array[index]->key);
 	printf("value: %s\n", ht->array[index]->value);
 	printf("key: %s\n", ht->array[index]->next->key);
