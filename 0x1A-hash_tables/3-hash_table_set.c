@@ -32,13 +32,8 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		return (0);
 	}
 	index = (hash_djb2((unsigned char *)key) % ht->size);
-	if (ht->array[index] == NULL)
-	{
-		ht->array[index] = new_node;
-		return (1);
-	}
 	mover = ht->array[index];
-	while (mover->next != NULL)
+	while (mover != NULL)
 	{
 		if (strcmp(mover->key, key) == 0)
 		{
@@ -48,8 +43,13 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		}
 		mover = mover->next;
 	}
-	new_node->next = ht->array[index];
-	ht->array[index] = new_node;
+	if (ht->array[index] == NULL)
+		ht->array[index] = new_node;
+	else
+	{
+		new_node->next = ht->array[index];
+		ht->array[index] = new_node;
+	}
 	return (1);
 }
 
