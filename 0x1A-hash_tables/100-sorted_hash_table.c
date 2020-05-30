@@ -66,10 +66,11 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 	if (ht->array[index] == NULL)
 	{
 		ht->array[index] = new_node;
+		sorted_shash_table(ht);
 		return (1);
 	}
 	mover = ht->array[index];
-	while (mover != NULL)
+	for (; mover != NULL; mover = mover->next)
 	{
 		if (strcmp(mover->key, key) == 0)
 		{
@@ -77,10 +78,10 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 			mover->value = value_duplicate;
 			return (1);
 		}
-		mover = mover->next;
 	}
 	new_node->next = ht->array[index];
 	ht->array[index] = new_node;
+	sorted_shash_table(ht);
 	return (1);
 }
 
@@ -184,23 +185,47 @@ char *shash_table_get(const shash_table_t *ht, const char *key)
 void shash_table_print(const shash_table_t *ht)
 {
 	shash_node_t *mover;
-	unsigned long int i = 0, check = 0;
+	unsigned long int check = 0;
 
 	if (ht == NULL)
 		return;
 	printf("{");
-	for (i = 0; i < ht->size; i++)
+	mover = ht->shead;
+	while (mover != NULL)
 	{
-		mover = ht->array[i];
-		while (mover != NULL)
-		{
-			if (check)
-				printf(", ");
-			printf("\'%s\': ", mover->key);
-			printf("\'%s\'", mover->value);
-			check = 1;
-			mover = mover->next;
-		}
+		if (check)
+			printf(", ");
+		printf("\'%s\': ", mover->key);
+		printf("\'%s\'", mover->value);
+		check = 1;
+		mover = mover->snext;
+	}
+	printf("}\n");
+}
+
+/**
+ * shash_table_print_rev - function to print all key/value pairs in reverse
+ * @ht: hash table to print
+ *
+ */
+
+void shash_table_print_rev(const shash_table_t *ht)
+{
+	shash_node_t *mover;
+	unsigned long int check = 0;
+
+	if (ht == NULL)
+		return;
+	printf("{");
+	mover = ht->stail;
+	while (mover != NULL)
+	{
+		if (check)
+			printf(", ");
+		printf("\'%s\': ", mover->key);
+		printf("\'%s\'", mover->value);
+		check = 1;
+		mover = mover->sprev;
 	}
 	printf("}\n");
 }
@@ -232,4 +257,133 @@ void shash_table_delete(shash_table_t *ht)
 	}
 	free(ht->array);
 	free(ht);
+}
+
+/**
+ * sorted_shash_table - function to sort hash table by ASCII value
+ * @ht: hash table to sort
+ *
+ */
+
+void sorted_shash_table(shash_table_t *ht)
+{
+	shash_node_t *mover, *holder, *holder2;
+	unsigned long int i = 0;
+	int check = 0;
+
+	reset_shead(ht);
+	if (ht == NULL)
+		return;
+	for (i = 0; i < ht->size; i++)
+	{
+		mover = ht->array[i];
+		if (mover != NULL && check == 0)
+			check = set_first_sort(ht, mover);
+		else if (mover != NULL && check == 1)
+			check = set_second_sort(ht, mover);
+		else if (mover != NULL && check > 1)
+		{
+			for (holder = ht->shead; holder != NULL; holder = holder->snext)
+			{
+				if (strcmp(holder->key, mover->key) > 0)
+					break;
+			}
+			if (holder == ht->shead)
+			{
+				mover->snext = ht->shead;
+				ht->shead = mover;
+			}
+			else
+			{
+				holder2 = ht->shead;
+				while (holder2->snext != holder)
+					holder2 = holder2->snext;
+				mover->sprev = holder2;
+				mover->snext = holder2->snext;
+				if (holder2->snext != NULL)
+					holder2->snext->sprev = mover;
+				holder2->snext = mover;
+			}
+		}
+	}
+	set_tail(ht);
+}
+
+/**
+ * set_first_sort - function to set first node of sorted list
+ * @ht: hash table to sort
+ * @mover: pointer to first node
+ * Return: 1 to increase check count
+ */
+
+int set_first_sort(shash_table_t *ht, shash_node_t *mover)
+{
+	ht->shead = mover;
+	return (1);
+}
+
+/**
+ * set_second_sort - function to set second node of sorted list
+ * @ht: hash table to sort
+ * @mover: pointer to second node
+ * Return: 2 to increase check count
+ */
+
+int set_second_sort(shash_table_t *ht, shash_node_t *mover)
+{
+	shash_node_t *holder;
+
+	holder = ht->shead;
+	if (strcmp(mover->key, holder->key) > 0)
+	{
+		mover->sprev = holder;
+		holder->snext = mover;
+		ht->shead = holder;
+	}
+	else
+	{
+		holder->sprev = mover;
+		mover->snext = holder;
+		ht->shead = mover;
+	}
+	return (2);
+}
+
+/**
+ * set_tail - function to set the tail of a sorted hash table
+ * @ht: hash table to sort
+ */
+
+void set_tail(shash_table_t *ht)
+{
+	shash_node_t *mover;
+
+	mover = ht->shead;
+	if (mover == NULL)
+		return;
+	while (mover->snext != NULL)
+		mover = mover->snext;
+	ht->stail = mover;
+}
+
+/**
+ * reset_shead - function to reset linked list to sorted hash table
+ * @ht: hash table to sort again
+ */
+
+void reset_shead(shash_table_t *ht)
+{
+	shash_node_t *mover, *tmp;
+
+	mover = ht->shead;
+	if (mover == NULL)
+		return;
+	while (mover != NULL)
+	{
+		tmp = mover;
+		mover = mover->snext;
+		tmp->snext = NULL;
+		tmp->sprev = NULL;
+	}
+	ht->shead = NULL;
 }
