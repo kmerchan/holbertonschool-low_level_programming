@@ -278,16 +278,10 @@ void sorted_shash_table(shash_table_t *ht)
 	{
 		mover = ht->array[i];
 		if (mover != NULL && check == 0)
-		{
-			check = set_first_sort(ht, mover);
-			mover = mover->next;
-		}
+			check = set_first_sort(ht, &mover);
 		if (mover != NULL && check == 1)
-		{
-			check = set_second_sort(ht, mover);
-			mover = mover->next;
-		}
-		while (mover != NULL && check > 1)
+			check = set_second_sort(ht, &mover);
+		for (; mover != NULL && check > 1; mover = mover->next)
 		{
 			for (holder = ht->shead; holder != NULL; holder = holder->snext)
 			{
@@ -310,7 +304,6 @@ void sorted_shash_table(shash_table_t *ht)
 					holder2->snext->sprev = mover;
 				holder2->snext = mover;
 			}
-			mover = mover->next;
 		}
 	}
 	set_tail(ht);
@@ -323,9 +316,10 @@ void sorted_shash_table(shash_table_t *ht)
  * Return: 1 to increase check count
  */
 
-int set_first_sort(shash_table_t *ht, shash_node_t *mover)
+int set_first_sort(shash_table_t *ht, shash_node_t **mover)
 {
-	ht->shead = mover;
+	ht->shead = (*mover);
+	*mover = (*mover)->next;
 	return (1);
 }
 
@@ -336,23 +330,24 @@ int set_first_sort(shash_table_t *ht, shash_node_t *mover)
  * Return: 2 to increase check count
  */
 
-int set_second_sort(shash_table_t *ht, shash_node_t *mover)
+int set_second_sort(shash_table_t *ht, shash_node_t **mover)
 {
 	shash_node_t *holder;
 
 	holder = ht->shead;
-	if (strcmp(mover->key, holder->key) > 0)
+	if (strcmp((*mover)->key, holder->key) > 0)
 	{
-		mover->sprev = holder;
-		holder->snext = mover;
+		(*mover)->sprev = holder;
+		holder->snext = (*mover);
 		ht->shead = holder;
 	}
 	else
 	{
-		holder->sprev = mover;
-		mover->snext = holder;
-		ht->shead = mover;
+		holder->sprev = (*mover);
+		(*mover)->snext = holder;
+		ht->shead = (*mover);
 	}
+	*mover = (*mover)->next;
 	return (2);
 }
 
