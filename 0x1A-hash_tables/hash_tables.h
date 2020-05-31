@@ -119,6 +119,7 @@ void sfree_dups(shash_node_t **new_node, char **key, char **value);
 void sorted_shash_table(shash_table_t *ht);
 int set_first_sort(shash_table_t *ht, shash_node_t **mover);
 int set_second_sort(shash_table_t *ht, shash_node_t **mover);
+shash_node_t *move_holder(shash_node_t *holder, shash_node_t *mover);
 void set_tail(shash_table_t *ht);
 void reset_shead(shash_table_t *ht);
 

@@ -283,14 +283,11 @@ void sorted_shash_table(shash_table_t *ht)
 			check = set_second_sort(ht, &mover);
 		for (; mover != NULL && check > 1; mover = mover->next)
 		{
-			for (holder = ht->shead; holder != NULL; holder = holder->snext)
-			{
-				if (strcmp(holder->key, mover->key) > 0)
-					break;
-			}
+			holder = move_holder(ht->shead, mover);
 			if (holder == ht->shead)
 			{
 				mover->snext = ht->shead;
+				ht->shead->sprev = mover;
 				ht->shead = mover;
 			}
 			else
@@ -349,6 +346,23 @@ int set_second_sort(shash_table_t *ht, shash_node_t **mover)
 	}
 	*mover = (*mover)->next;
 	return (2);
+}
+
+/**
+ * move_holder - moves holder until its key has greater ascii value than mover
+ * @holder: node currently in sorted list to move to position to add mover
+ * @mover: mover value to compare against
+ * Return: holder position after being moved
+*/
+
+shash_node_t *move_holder(shash_node_t *holder, shash_node_t *mover)
+{
+	for (; holder != NULL; holder = holder->snext)
+	{
+		if (strcmp(holder->key, mover->key) > 0)
+			break;
+	}
+	return (holder);
 }
 
 /**
