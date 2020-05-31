@@ -278,10 +278,16 @@ void sorted_shash_table(shash_table_t *ht)
 	{
 		mover = ht->array[i];
 		if (mover != NULL && check == 0)
+		{
 			check = set_first_sort(ht, mover);
-		else if (mover != NULL && check == 1)
+			mover = mover->next;
+		}
+		if (mover != NULL && check == 1)
+		{
 			check = set_second_sort(ht, mover);
-		else if (mover != NULL && check > 1)
+			mover = mover->next;
+		}
+		while (mover != NULL && check > 1)
 		{
 			for (holder = ht->shead; holder != NULL; holder = holder->snext)
 			{
@@ -304,6 +310,7 @@ void sorted_shash_table(shash_table_t *ht)
 					holder2->snext->sprev = mover;
 				holder2->snext = mover;
 			}
+			mover = mover->next;
 		}
 	}
 	set_tail(ht);
