@@ -1,11 +1,14 @@
 #!/usr/bin/python3
 """
-Finds the perimeter of an island represented by 1s
-surrounded by 0s in a list of lists of integers
+Defines function to find island perimeter
 """
 
 
 def island_perimeter(grid):
+    """
+    Finds the perimeter of an island represented by 1s
+    surrounded by 0s in a list of lists of integers
+    """
     perimeter = 0
     for rows in range(len(grid)):
         if rows == 0 or rows == ((len(grid)) - 1):
