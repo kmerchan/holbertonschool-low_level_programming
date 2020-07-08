@@ -1,4 +1,9 @@
 #!/usr/bin/python3
+"""
+Finds the perimeter of an island represented by 1s
+surrounded by 0s in a list of lists of integers
+"""
+
 
 def island_perimeter(grid):
     perimeter = 0
