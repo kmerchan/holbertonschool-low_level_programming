@@ -1,5 +1,5 @@
 # -*- Makefile -*-
-CC = gcc $(CFLAGS)
+CC = gcc
 SRC = main.c holberton.c
 OBJ = $(SRC:.c=.o)
 NAME = holberton
