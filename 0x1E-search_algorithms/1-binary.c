@@ -43,8 +43,8 @@ int binary_search(int *array, size_t size, int value)
 
 /**
  * print_array - prints the array searching through
- * @array - int array to print
- * @size - size of int array
+ * @array: int array to print
+ * @size: size of int array
  *
  */
 
