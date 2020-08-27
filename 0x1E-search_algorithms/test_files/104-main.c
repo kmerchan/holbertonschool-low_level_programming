@@ -31,7 +31,7 @@ int main(void)
 	/* test is array is only 1 element long, and matches */
 	printf("Found %d at index: %d\n\n", 3, advanced_binary(a, 1, 3));
 	/* test is array is only 1 element long, and isn't a match */
-	printf("Found %d at index: %d\n\n", 3, advanced_binary(a, 1, -3));
+	printf("Found %d at index: %d\n\n", -3, advanced_binary(a, 1, -3));
 	/* first test given on project page, finds non-repeat match */
 	printf("Found %d at index: %d\n\n", 8, advanced_binary(array, size, 8));
 	/* second test given on project page, finds first repeated match */
@@ -50,5 +50,7 @@ int main(void)
 	printf("Found %d at index: %d\n\n", 1, advanced_binary(arr, sz, 1));
 	/* tests for non-match beyond array min */
 	printf("Found %d at index: %d\n\n", -3, advanced_binary(arr, sz, -3));
+	/* tests match at beginning of array */
+	printf("Found %d at index: %d\n\n", 0, advanced_binary(arr, sz, 0));
 	return (EXIT_SUCCESS);
 }
