@@ -11,5 +11,7 @@ int linear_search(int *array, size_t size, int value);
 int binary_search(int *array, size_t size, int value);
 /* function to use jump search to find index of matching value (100) */
 int jump_search(int *array, size_t size, int value);
+/* function to use interpolation search to find index of matching value (102) */
+int interpolation_search(int *array, size_t size, int value);
 
 #endif
