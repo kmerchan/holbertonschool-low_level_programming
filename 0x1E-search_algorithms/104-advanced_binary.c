@@ -27,7 +27,7 @@ int advanced_binary(int *array, size_t size, int value)
 			printf("\n");
 	}
 
-	if (array[half] == value && (half == 0 || array[half - 1] < value))
+	if (array[half] == value && half == 0)
 		return (half);
 	else if (array[half] == value)
 		return (advanced_binary(array, half + 1, value));
