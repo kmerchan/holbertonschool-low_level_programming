@@ -11,7 +11,7 @@
 
 int advanced_binary(int *array, size_t size, int value)
 {
-	int half = ((size) / 2), result = 0;
+	int half = ((size - 1) / 2), result = 0;
 	size_t i = 0;
 
 	if (array == NULL || size < 1)
@@ -29,21 +29,15 @@ int advanced_binary(int *array, size_t size, int value)
 
 	if (array[half] == value && half == 0)
 		return (half);
-	else if (array[half] == value)
-		return (advanced_binary(array, half, value));
-
 	else if (size == 1)
 		return (-1);
 
-	if (array[half] > value)
-		return (advanced_binary(array, half, value));
-	if (array[half] < value)
-	{
-		half = half;
-		result = advanced_binary(&array[half], size - half, value);
-		if (result == -1)
-			return (-1);
-		return (half + result);
-	}
-	return (-1);
+	if (array[half] >= value)
+		return (advanced_binary(array, half + 1, value));
+
+	half += 1;
+	result = advanced_binary(&array[half], size - half, value);
+	if (result == -1)
+		return (-1);
+	return (half + result);
 }
