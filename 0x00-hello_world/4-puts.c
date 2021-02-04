@@ -1,17 +1,13 @@
-#include<stdio.h>
-#include <string.h>
+#include <stdio.h>
 
 /**
- * main - Entry point
- *
- * Return: Always 0 (Success)
+ * main - prints text to cmd line
+ *Return: 0
  */
-
 int main(void)
 {
-	char string[52];
+	char a[60] = ("\"Programming is like building a multilingual puzzle");
 
-	strcpy(string, "\"Programming is like building a multilingual puzzle");
-	puts(string);
+	puts(a);
 	return (0);
 }
